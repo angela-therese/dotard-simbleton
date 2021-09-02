@@ -1,7 +1,9 @@
-import { BusinessList } from "./BusinessList.js";
+import { nyBusinessList } from "./BusinessList.js";
 
 
-BusinessList();
+
+// BusinessList();
+nyBusinessList();
 
 // alert("Hello, world")
 // console.log("Howdy, world")

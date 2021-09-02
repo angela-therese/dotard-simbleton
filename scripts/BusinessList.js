@@ -3,13 +3,31 @@ import { business } from "./Business.js";
 
 const contentTarget = document.querySelector(".business-container")
 
-export const BusinessList = () => {
-    const businessArray = useBusinesses()
-    contentTarget.innerHTML = "<h1>Businesses</h1>"
 
-    businessArray.forEach(
-        (businessObject) => {
-            contentTarget.innerHTML += business(businessObject)
-        }
-    );
+// export const BusinessList = () => {
+//     const businessArray = useBusinesses()
+
+//     businessArray.forEach(
+//         (businessObject) => {
+//             contentTarget.innerHTML += business(businessObject)
+//         }
+//     );
+// }
+
+export const nyBusinessList = () => {
+    const businessArray = useBusinesses()
+
+     const nyBusinesses= businessArray.filter(businessObject => {
+         if(businessObject.addressStateCode == "NY"){
+             return true
+         }
+     return false
 }
+     );
+
+     nyBusinesses.forEach(
+         (businessObject) => {
+             contentTarget.innerHTML += business(businessObject)
+         }
+     )
+};

@@ -1,7 +1,9 @@
 export const business = (businessObject) => {
     return `
-    <section class="business">
-            <h2>${businessObject.companyName}</h2>
-    </section>
+    <div class="business">
+    <h3>${businessObject.companyName}</h3>
+    <p>${businessObject.addressFullStreet}</p>
+    <p>${businessObject.addressCity}, ${businessObject.addressStateCode} ${businessObject.addressZipCode}
+    </div>
     `
 }
