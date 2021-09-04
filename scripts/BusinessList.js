@@ -67,7 +67,32 @@ export const agentList = () => {
         (agentObject) => {
             contentTargetThree.innerHTML += agents(agentObject)
         }
-    )
-        
+    )};
 
-}
+
+    const companySearchResultArticle = document.querySelector(".foundCompanies")
+
+export const searchbar = () => {
+    document
+        .querySelector("#companySearch")
+        .addEventListener("keypress", keyPressEvent => {
+             if (keyPressEvent.charCode === 13) {
+                const businessArray = useBusinesses();
+                const foundBusiness = businessArray.find(business => business.companyName.toLowerCase().includes(keyPressEvent.target.value.toLowerCase()))
+
+            companySearchResultArticle.innerHTML = `
+                <h2>
+                ${foundBusiness.companyName}
+                </h2>
+                <section>
+                ${foundBusiness.addressFullStreet}
+
+                </section>
+                <section>
+                ${foundBusiness.addressCity},
+                ${foundBusiness.addressStateCode}
+                ${foundBusiness.addressZipCode}
+                </section>
+            `;
+        }
+    })};
